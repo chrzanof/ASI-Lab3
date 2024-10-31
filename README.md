@@ -1,7 +1,7 @@
-# Lab3-Analizator_wynikow
+# Lab3-Analizator_wynikow - Dokumentacja
 
-## Opis projektu
-Celem tego projektu jest opracowanie modeli regresyjnych, które przewidują wartość zmiennej `score` na podstawie wielu zmiennych, w tym demograficznych, ekonomicznych i edukacyjnych. Wykorzystano kilka modeli, takich jak Gradient Boosting, Random Forest, XGBoost i wielowarstwowy perceptron (MLP), które oceniono za pomocą grid search i kroswalidacji.
+## Opis zadania
+Celem tego zadania jest opracowanie modeli , które przewidują wartość zmiennej `score` na podstawie wielu zmiennych, w tym demograficznych, ekonomicznych i edukacyjnych. Wykorzystano kilka modeli, takich jak Gradient Boosting, Random Forest, XGBoost i wielowarstwowy perceptron (MLP), które oceniono za pomocą grid search i kroswalidacji.
 
 
 ## Struktura plików
@@ -37,7 +37,7 @@ python s24154.py <sciezka_do_danych.csv> <sciezka_do_zapisu_modeli> --n_folds <l
 - została usunięta kolumna `rownames` ponieważ były to tylko ponumerowane kolumny
 
 ## Wyniki i podsumowanie
-Modele zostały ocenione przy użyciu kroswalidacji oraz podzielone na zbiory: treningowy, walidacyjny i testowy. Wyniki dla każdego modelu przedstawiają metryki, takie jak MAPE, MAE, MSE i R^2.
+Modele zostały ocenione przy użyciu kroswalidacji oraz podzielone na zbiory: treningowy, walidacyjny i testowy. Wyniki dla każdego modelu przedstawiają metryki: MAE, MSE i R^2.
 
 ### Wyniki
 Dla każdego modelu uzyskano poniższe wyniki:
