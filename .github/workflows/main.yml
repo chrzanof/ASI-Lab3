@@ -1,13 +1,12 @@
 name: ML Pipeline
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   train:
-    runs-on: self-hosted
+    runs-on: 
+    - self-hosted
 
     steps:
       - name: Checkout repository
