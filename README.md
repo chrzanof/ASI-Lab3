@@ -27,10 +27,14 @@ python s24154.py <sciezka_do_danych.csv> <sciezka_do_zapisu_modeli> --n_folds <l
 
 ## Analiza i inżynieria danych
 ### Analiza
-![distance histogram](charts/distance_histogram.png)
+![distance histogram](charts/distance_histogram.png)![education histogram](charts/education_histogram.png)![ethnicity countplot](charts/ethnicity_countplot.png)
+![fcollege countplot](charts/fcollege_countplot.png)![gender countplot](charts/gender_countplot.png)![home countplot](charts/home_countplot.png)
+![income countplot](charts/income_countplot.png)![mcollege countplot](charts/mcollege_countplot.png)![region countplot](charts/region_countplot.png)
+![score histogram](charts/score_histogram.png)![tuition histogram](charts/tuition_histogram.png)![unemp histogram](charts/unemp_histogram.png)
+![urban countplot](charts/urban_countplot.png)![wage histogram](charts/wage_histogram.png)
 
 ### Inżynieria
-- została usunięta kolumna `rownames`
+- została usunięta kolumna `rownames` ponieważ były to tylko ponumerowane kolumny
 
 ## Wyniki i podsumowanie
 Modele zostały ocenione przy użyciu kroswalidacji oraz podzielone na zbiory: treningowy, walidacyjny i testowy. Wyniki dla każdego modelu przedstawiają metryki, takie jak MAPE, MAE, MSE i R^2.
