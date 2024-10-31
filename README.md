@@ -63,9 +63,12 @@ Dla każdego modelu uzyskano poniższe wyniki:
 | XGBoost            | Validation     | 6.042898   | 53.889854  | 0.330495 |
 
 ### Wnioski
-- **Najlepszy wynik osiągnął model Gradient Boosting**, jednak jego R^2 jest stosunkowo niski, co sugeruje, że model może wymagać dalszej optymalizacji.
-- **Random Forest** i **XGBoost** również wykazały zbliżone wyniki, sugerując ich przydatność dla tego zbioru danych.
-- **MLPRegressor** wypadł gorzej niż modele drzewiaste, co może wynikać z niewystarczającej ilości danych do nauki lub problemów z doborem hiperparametrów.
+
+1. **MAE**: Najlepszy wynik osiągnął model **XGBoost** na zbiorze testowym, uzyskując wartość **5.657715**. To wskazuje na dobrą dokładność modelu w przewidywaniu wartości.
+
+2. **MSE**: Model **XGBoost** również wykazał najlepszy wynik w tej metryce na zbiorze testowym z wartością **49.245949**, co sugeruje, że model jest skuteczny w minimalizowaniu błędów kwadratowych.
+
+3. **R^2**: Najwyższy współczynnik determinacji uzyskał model **XGBoost** na zbiorze treningowym z krzyżową walidacją (Train (CV)), osiągając wartość **0.340550**. To sugeruje, że model lepiej dopasowuje się do danych treningowych w porównaniu do innych modeli.
 
 
 
