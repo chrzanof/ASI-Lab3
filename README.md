@@ -1,13 +1,14 @@
-# Dokumentacja projektu: Modelowanie regresyjne dla przewidywania wyniku
+# Lab3-Analizator_wynikow
 
 ## Opis projektu
 Celem tego projektu jest opracowanie modeli regresyjnych, które przewidują wartość zmiennej `score` na podstawie wielu zmiennych, w tym demograficznych, ekonomicznych i edukacyjnych. Wykorzystano kilka modeli, takich jak Gradient Boosting, Random Forest, XGBoost i wielowarstwowy perceptron (MLP), które oceniono za pomocą grid search i kroswalidacji.
 
 
 ## Struktura plików
-- `main.py`: Główny skrypt do uruchomienia procesu uczenia maszynowego i oceny modeli.
+- `s24154.py`: Główny skrypt do uruchomienia procesu uczenia maszynowego i oceny modeli.
 - `charts/`: Katalog zawierający wygenerowane histogramy i wykresy słupkowe.
-- `model_training.log`: Plik dziennika z zapisanymi krokami i informacjami o procesie trenowania.
+- `model_training.log`: Plik z zapisanymi krokami i informacjami o procesie trenowania.
+- `requirements.txt`: Plik wymagań do zainstalowania
 
 ## Przygotowanie i uruchomienie
 ### Wymagania wstępne
@@ -24,22 +25,12 @@ pip install -r requirements.txt
 python s24154.py <sciezka_do_danych.csv> <sciezka_do_zapisu_modeli> --n_folds <liczba_foli> --seed <ziarno>
 ```
 
-## Wizualizacja danych
+## Analiza i inżynieria danych
+### Analiza
+![distance histogram](charts/distance_histogram.png)
 
-### Histogramy i wykresy słupkowe
-Dla każdego atrybutu zbioru danych zostały wygenerowane wizualizacje:
-- **Histogramy** dla atrybutów numerycznych, takich jak `income`, `distance`, `tuition`.
-- **Wykresy słupkowe** dla atrybutów kategorycznych, takich jak `gender`, `ethnicity`, `fcollege`.
-
-Wizualizacje te zostały zapisane w katalogu `charts/`. Przykładowe wykresy to:
-- `income_histogram.png`: Przedstawia rozkład dochodów uczestników.
-- `gender_countplot.png`: Pokazuje rozkład poszczególnych płci w zbiorze danych.
-
-### Przykładowe wizualizacje
-| Atrybut      | Typ           | Wykres              |
-|--------------|---------------|---------------------|
-| `income`     | Numeryczny    | Histogram          |
-| `gender`     | Kategoryczny  | Wykres słupkowy    |
+### Inżynieria
+- została usunięta kolumna `rownames`
 
 ## Wyniki i podsumowanie
 Modele zostały ocenione przy użyciu kroswalidacji oraz podzielone na zbiory: treningowy, walidacyjny i testowy. Wyniki dla każdego modelu przedstawiają metryki, takie jak MAPE, MAE, MSE i R^2.
