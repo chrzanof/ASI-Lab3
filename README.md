@@ -15,14 +15,19 @@ Celem tego zadania jest opracowanie modeli , które przewidują wartość zmienn
 - Python >= 3.8
 - pip 
 
-### Instalacja
+### Instalacja pakietów
 ```bash
 pip install -r requirements.txt
 ```
 
+### Pobranie danych
+```bash
+curl -o CollegeDistance.csv https://vincentarelbundock.github.io/Rdatasets/csv/AER/CollegeDistance.csv
+```
+
 ### Uruchomienie
 ```bash
-python s24154.py <sciezka_do_danych.csv> <sciezka_do_zapisu_modeli> --n_folds <liczba_foli> --seed <ziarno>
+python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 ```
 
 ## Analiza i inżynieria danych
