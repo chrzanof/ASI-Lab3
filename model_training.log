@@ -1,0 +1,52 @@
+2024-10-31 15:57:54,646 - INFO - Starting model training pipeline.
+2024-10-31 15:57:54,646 - INFO - Loading dataset from CollegeDistance.csv
+2024-10-31 15:57:54,651 - INFO - Creating and saving histograms of dataset features.
+2024-10-31 15:57:55,241 - INFO - Dataset loaded successfully. Splitting into features and target.
+2024-10-31 15:57:55,241 - INFO - Identified 5 numeric and 8 categorical features.
+2024-10-31 15:57:55,243 - INFO - Models will be saved to /models.
+2024-10-31 15:57:55,243 - INFO - Starting training for GradientBoosting model.
+2024-10-31 15:57:55,243 - INFO - Running grid search for GradientBoosting.
+2024-10-31 15:57:58,940 - INFO - Best parameters for GradientBoosting: {'regressor__learning_rate': 0.1, 'regressor__max_depth': 3, 'regressor__n_estimators': 100}
+2024-10-31 15:57:59,064 - INFO - GradientBoosting Cross-Validation on Train - MAPE: 0.1173, MAE: 5.7342, MSE: 49.9649, R^2: 0.3367
+2024-10-31 15:57:59,068 - INFO - GradientBoosting Validation Results - MAPE: 0.1264, MAE: 6.0451, MSE: 53.8053, R^2: 0.3315
+2024-10-31 15:57:59,071 - INFO - GradientBoosting model saved to: /models/GradientBoosting_model.pkl
+2024-10-31 15:57:59,071 - INFO - Starting training for XGBoost model.
+2024-10-31 15:57:59,071 - INFO - Running grid search for XGBoost.
+2024-10-31 15:58:00,006 - INFO - Best parameters for XGBoost: {'regressor__learning_rate': 0.05, 'regressor__max_depth': 3, 'regressor__n_estimators': 200}
+2024-10-31 15:58:00,061 - INFO - XGBoost Cross-Validation on Train - MAPE: 0.1172, MAE: 5.7245, MSE: 49.6782, R^2: 0.3405
+2024-10-31 15:58:00,065 - INFO - XGBoost Validation Results - MAPE: 0.1264, MAE: 6.0429, MSE: 53.8899, R^2: 0.3305
+2024-10-31 15:58:00,069 - INFO - XGBoost model saved to: /models/XGBoost_model.pkl
+2024-10-31 15:58:00,069 - INFO - Starting training for RandomForest model.
+2024-10-31 15:58:00,069 - INFO - Running grid search for RandomForest.
+2024-10-31 15:58:05,238 - INFO - Best parameters for RandomForest: {'regressor__max_depth': 10, 'regressor__min_samples_split': 10, 'regressor__n_estimators': 200}
+2024-10-31 15:58:05,756 - INFO - RandomForest Cross-Validation on Train - MAPE: 0.1196, MAE: 5.8450, MSE: 52.0892, R^2: 0.3085
+2024-10-31 15:58:05,769 - INFO - RandomForest Validation Results - MAPE: 0.1251, MAE: 6.0114, MSE: 54.1115, R^2: 0.3277
+2024-10-31 15:58:05,788 - INFO - RandomForest model saved to: /models/RandomForest_model.pkl
+2024-10-31 15:58:05,788 - INFO - Starting training for MLPRegressor model.
+2024-10-31 15:58:05,788 - INFO - Running grid search for MLPRegressor.
+2024-10-31 15:58:07,689 - INFO - Best parameters for MLPRegressor: {'regressor__activation': 'relu', 'regressor__alpha': 0.01, 'regressor__hidden_layer_sizes': (50, 100, 50), 'regressor__learning_rate_init': 0.01}
+2024-10-31 15:58:08,509 - INFO - MLPRegressor Cross-Validation on Train - MAPE: 0.1223, MAE: 6.0122, MSE: 55.5200, R^2: 0.2630
+2024-10-31 15:58:08,512 - INFO - MLPRegressor Validation Results - MAPE: 0.1304, MAE: 6.2557, MSE: 58.8804, R^2: 0.2685
+2024-10-31 15:58:08,514 - INFO - MLPRegressor model saved to: /models/MLPRegressor_model.pkl
+2024-10-31 15:58:08,514 - INFO - Starting evaluation on test set.
+2024-10-31 15:58:08,520 - INFO - GradientBoosting Test Results - MAPE: 0.1179, MAE: 5.6659, MSE: 49.3369, R^2: 0.3170
+2024-10-31 15:58:08,542 - INFO - XGBoost Test Results - MAPE: 0.1177, MAE: 5.6577, MSE: 49.2459, R^2: 0.3183
+2024-10-31 15:58:08,571 - INFO - RandomForest Test Results - MAPE: 0.1186, MAE: 5.7104, MSE: 51.2483, R^2: 0.2906
+2024-10-31 15:58:08,575 - INFO - MLPRegressor Test Results - MAPE: 0.1252, MAE: 6.0277, MSE: 56.4666, R^2: 0.2183
+2024-10-31 15:58:08,576 - INFO - 
+Summary of Model Evaluation Results:
+2024-10-31 15:58:08,576 - INFO -     index             model     dataset  ...       mae        mse        r2
+0       8  GradientBoosting        Test  ...  5.665896  49.336871  0.317022
+1       0  GradientBoosting  Train (CV)  ...  5.734156  49.964912  0.336743
+2       1  GradientBoosting  Validation  ...  6.045087  53.805321  0.331545
+3      11      MLPRegressor        Test  ...  6.027713  56.466550  0.218325
+4       6      MLPRegressor  Train (CV)  ...  6.012229  55.520003  0.263003
+5       7      MLPRegressor  Validation  ...  6.255663  58.880428  0.268494
+6      10      RandomForest        Test  ...  5.710428  51.248257  0.290563
+7       4      RandomForest  Train (CV)  ...  5.844986  52.089164  0.308545
+8       5      RandomForest  Validation  ...  6.011434  54.111517  0.327741
+9       9           XGBoost        Test  ...  5.657715  49.245949  0.318281
+10      2           XGBoost  Train (CV)  ...  5.724472  49.678166  0.340550
+11      3           XGBoost  Validation  ...  6.042898  53.889854  0.330495
+
+[12 rows x 7 columns]
