@@ -193,6 +193,7 @@ def main(data_path, save_path, n_folds, seed):
     results_df = results_df.sort_values(by=['model', 'dataset'])
     logger.info("\nSummary of Model Evaluation Results:")
     logger.info(results_df.reset_index())
+    print(results_df.reset_index())
 
 
 if __name__ == "__main__":
