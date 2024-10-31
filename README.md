@@ -12,7 +12,7 @@ Celem tego zadania jest opracowanie modeli , które przewidują wartość zmienn
 
 ## Przygotowanie i uruchomienie
 ### Wymagania wstępne
-- Python >= 3.8
+- Python >= 3.11
 - pip 
 
 ### Instalacja pakietów
