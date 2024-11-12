@@ -39,7 +39,7 @@ python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 python3 app.py
 ```
 
-### (Alterantywnie) Pobranie obrazu z Docker Huba u uruchomienie kontenera
+### (Alterantywnie) Pobranie obrazu z Docker Huba i uruchomienie kontenera
 ```bash
 sudo docker pull chrzanof/my-app
 sudo docker run -p 5000:5000 chrzanof/my-app
