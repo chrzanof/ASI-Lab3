@@ -31,7 +31,7 @@ pip install -r requirements.txt
 curl -o CollegeDistance.csv https://vincentarelbundock.github.io/Rdatasets/csv/AER/CollegeDistance.csv
 ```
 
-### Uruchomienie skryptu uczącego modele
+### (Opcjonalnie) Uruchomienie skryptu uczącego modele
 ```bash
 python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 ```
