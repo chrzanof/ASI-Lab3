@@ -167,14 +167,15 @@ def main(data_path, save_path, n_folds, seed):
             'r2': r2
         })
 
-        model_path = os.path.join(save_path, f"{model_name}_model.pkl")
-        joblib.dump(best_model, model_path)
-        logger.info(f"{model_name} model saved to: {model_path}")
+        # Save the entire pipeline (preprocessor + model)
+        pipeline_path = os.path.join(save_path, f"{model_name}_pipeline.pkl")
+        joblib.dump(best_model, pipeline_path)
+        logger.info(f"{model_name} pipeline saved to: {pipeline_path}")
 
     logger.info("Starting evaluation on test set.")
     for model_name in models.keys():
-        model_path = os.path.join(save_path, f"{model_name}_model.pkl")
-        best_model = joblib.load(model_path)
+        pipeline_path = os.path.join(save_path, f"{model_name}_pipeline.pkl")
+        best_model = joblib.load(pipeline_path)
 
         y_test_pred = best_model.predict(X_test)
         mape, mae, mse, r2 = evaluate_model(y_test, y_test_pred)
