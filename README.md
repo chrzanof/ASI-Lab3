@@ -1,4 +1,4 @@
-# Lab3-Analizator_wynikow - Dokumentacja
+# Lab3&4-Analizator_wynikow - Dokumentacja
 
 ## Opis zadania
 Celem tego zadania jest opracowanie modeli , które przewidują wartość zmiennej `score` na podstawie wielu zmiennych, w tym demograficznych, ekonomicznych i edukacyjnych. Wykorzystano kilka modeli, takich jak Gradient Boosting, Random Forest, XGBoost i wielowarstwowy perceptron (MLP), które oceniono za pomocą grid search i kroswalidacji.
