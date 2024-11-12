@@ -16,7 +16,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import mean_absolute_percentage_error, mean_absolute_error, mean_squared_error, r2_score
 
 
-# Function to compute evaluation metrics
 def evaluate_model(y_true, y_pred):
     mape = mean_absolute_percentage_error(y_true, y_pred)
     mae = mean_absolute_error(y_true, y_pred)
@@ -25,7 +24,6 @@ def evaluate_model(y_true, y_pred):
     return mape, mae, mse, r2
 
 
-# Function to visualize data distributions
 def visualize_data(df):
     charts_dir = "charts"
     os.makedirs(charts_dir, exist_ok=True)
@@ -55,18 +53,14 @@ def main(data_path, save_path, n_folds, seed):
 
     logger.info("Starting model training pipeline.")
 
-    # Load the dataset
     logger.info(f"Loading dataset from {data_path}")
     df = pd.read_csv(data_path)
 
-    # Drop unmeaningful feature
     df = df.drop(columns=['rownames'], errors='ignore')
 
-    # Visualize data distributions
     logger.info("Creating and saving histograms of dataset features.")
     visualize_data(df)
 
-    # Separate target variable and features
     X = df.drop(columns=['score'])
     y = df['score']
     logger.info("Dataset loaded successfully. Splitting into features and target.")
@@ -167,7 +161,6 @@ def main(data_path, save_path, n_folds, seed):
             'r2': r2
         })
 
-        # Save the entire pipeline (preprocessor + model)
         pipeline_path = os.path.join(save_path, f"{model_name}_pipeline.pkl")
         joblib.dump(best_model, pipeline_path)
         logger.info(f"{model_name} pipeline saved to: {pipeline_path}")
