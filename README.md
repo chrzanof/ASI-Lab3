@@ -15,6 +15,12 @@ Celem tego zadania jest opracowanie modeli , które przewidują wartość zmienn
 - Python >= 3.11
 - pip 
 
+### Klonowanie repozytorium
+```bash
+git clone https://github.com/chrzanof/ASI-Lab3.git
+cd ASI-Lab3
+```
+
 ### Instalacja pakietów
 ```bash
 pip install -r requirements.txt
@@ -25,9 +31,53 @@ pip install -r requirements.txt
 curl -o CollegeDistance.csv https://vincentarelbundock.github.io/Rdatasets/csv/AER/CollegeDistance.csv
 ```
 
-### Uruchomienie
+### Uruchomienie skryptu uczącego modele
 ```bash
 python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
+```
+
+### Pobranie obrazu z Docker Huba
+```bash
+sudo docker pull chrzanof/my-app
+```
+
+### Uruchomienie kontenera z obrazu
+```bash
+sudo docker run -p 5000:5000 chrzanof/my-app
+```
+
+## Korzystanie z API
+API obsługuje dane wejściowe w formacie JSON, przyjmując listę cech wejściowych (bez zmiennej `score`).
+
+### Przykład zapytania `curl`(JSON)
+```bash
+curl -X POST http://127.0.0.1:5000/predict \
+-H "Content-Type: application/json" \
+-d '{
+    "input": [
+        {
+            "gender": "male",
+            "ethnicity": "other",
+            "fcollege": "yes",
+            "mcollege": "no",
+            "home": "yes",
+            "urban": "yes",
+            "unemp": 6.2,
+            "wage": 8.09,
+            "distance": 0.2,
+            "tuition": 0.889,
+            "education": 12,
+            "income": "high",
+            "region": "other"
+        }
+    ]
+}'
+```
+### Przykład odpowiedzi
+```json
+{
+  "prediction": [38.6]
+}
 ```
 
 ## Analiza i inżynieria danych
