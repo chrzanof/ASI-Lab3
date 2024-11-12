@@ -5,8 +5,10 @@ Celem tego zadania jest opracowanie modeli , które przewidują wartość zmienn
 
 
 ## Struktura plików
-- `s24154.py`: Główny skrypt do uruchomienia procesu uczenia maszynowego i oceny modeli.
+- `s24154.py`: Skrypt do uruchomienia procesu uczenia maszynowego i oceny modeli.
+- `app.py`: Skrypt API
 - `charts/`: Katalog zawierający wygenerowane histogramy i wykresy słupkowe.
+- `models/`: Katalog zawierający wytrenowane modele
 - `model_training.log`: Plik z zapisanymi krokami i informacjami o procesie trenowania.
 - `requirements.txt`: Plik wymagań do zainstalowania
 
