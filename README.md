@@ -36,12 +36,17 @@ curl -o CollegeDistance.csv https://vincentarelbundock.github.io/Rdatasets/csv/A
 python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 ```
 
-### Pobranie obrazu z Docker Huba
+### Uruchomienie API lokalnie
+```bash
+python3 app.py
+```
+
+### (Alterantywnie) Pobranie obrazu z Docker Huba
 ```bash
 sudo docker pull chrzanof/my-app
 ```
 
-### Uruchomienie kontenera z obrazu
+### (Alterantywnie) Uruchomienie kontenera z obrazu
 ```bash
 sudo docker run -p 5000:5000 chrzanof/my-app
 ```
