@@ -6,7 +6,7 @@ Celem tego zadania jest opracowanie modeli , które przewidują wartość zmienn
 
 ## Struktura plików
 - `s24154.py`: Skrypt do uruchomienia procesu uczenia maszynowego i oceny modeli.
-- `app.py`: Skrypt API
+- `app.py`: Skrypt API obsługujący format json do predykcji zmiennej `score`
 - `charts/`: Katalog zawierający wygenerowane histogramy i wykresy słupkowe.
 - `models/`: Katalog zawierający wytrenowane modele
 - `model_training.log`: Plik z zapisanymi krokami i informacjami o procesie trenowania.
@@ -28,13 +28,9 @@ cd ASI-Lab3
 pip install -r requirements.txt
 ```
 
-### Pobranie danych
+### (Opcjonalnie) Pobranie danych i uruchomienie skryptu uczącego modele
 ```bash
 curl -o CollegeDistance.csv https://vincentarelbundock.github.io/Rdatasets/csv/AER/CollegeDistance.csv
-```
-
-### (Opcjonalnie) Uruchomienie skryptu uczącego modele
-```bash
 python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 ```
 
@@ -43,19 +39,15 @@ python3 s24154.py CollegeDistance.csv models --n_folds 5 --seed 42
 python3 app.py
 ```
 
-### (Alterantywnie) Pobranie obrazu z Docker Huba
+### (Alterantywnie) Pobranie obrazu z Docker Huba u uruchomienie kontenera
 ```bash
 sudo docker pull chrzanof/my-app
-```
-
-### (Alterantywnie) Uruchomienie kontenera z obrazu
-```bash
 sudo docker run -p 5000:5000 chrzanof/my-app
 ```
 
 ## Korzystanie z API
 API obsługuje dane wejściowe w formacie JSON, przyjmując listę cech wejściowych (bez zmiennej `score`).
-
+Do predykcji wykorzystano model **XGBoost**
 ### Przykład zapytania `curl`(JSON)
 ```bash
 curl -X POST http://127.0.0.1:5000/predict \
